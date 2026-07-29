@@ -1107,3 +1107,12 @@ iframe.tile-frame { border: 1px solid var(--rule); }
 
 .tile-rec { color: var(--spend); text-decoration: none; }
 .tile-rec:hover { text-decoration: underline; }
+
+/* A pack with no cover keeps the grid's rhythm without drawing a broken image. */
+.pack-frame.is-blank {
+  display: block;
+  aspect-ratio: 670 / 376;
+  background:
+    linear-gradient(135deg, var(--slate-raised) 0%, var(--slate) 100%);
+  border-bottom: 1px solid var(--rule);
+}
