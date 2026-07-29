@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI video credit calculator — Kling 3.0 and Seedance 2.0</title>
+<meta name="description" content="Free calculator for AI video generation cost. Measured Kling 3.0 and Seedance 2.0 credit rates, plus the 5–10 second billing dead zone that wastes half a clip order.">
+<link rel="canonical" href="https://kanno321-create.github.io/nabemall/tools/ai-video-credit-calculator/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="nabemall">
+<meta property="og:title" content="AI video credit calculator — Kling 3.0 and Seedance 2.0">
+<meta property="og:description" content="Free calculator for AI video generation cost. Measured Kling 3.0 and Seedance 2.0 credit rates, plus the 5–10 second billing dead zone that wastes half a clip order.">
+<meta property="og:url" content="https://kanno321-create.github.io/nabemall/tools/ai-video-credit-calculator/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@nabeaimusic">
+<meta name="twitter:title" content="AI video credit calculator — Kling 3.0 and Seedance 2.0">
+<meta name="twitter:description" content="Free calculator for AI video generation cost. Measured Kling 3.0 and Seedance 2.0 credit rates, plus the 5–10 second billing dead zone that wastes half a clip order.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%230B1013%22/%3E%3Cg%20stroke%3D%22%23D9A441%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M9%2011h14M9%2016h14M9%2021h8%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/nabemall/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "AI video credit calculator — Kling 3.0 and Seedance 2.0", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any", "url": "https://kanno321-create.github.io/nabemall/tools/ai-video-credit-calculator/", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body>
+<header class="masthead">
+  <a class="brand" href="/nabemall/">nabemall</a>
+  <nav class="masthead-nav">
+    <a href="/nabemall/#products">Packs</a>
+    <a href="/nabemall/tools/">Tools</a>
+    <a href="/nabemall/work/">Work</a>
+    <a href="/nabemall/#method">Method</a>
+  </nav>
+</header>
+
+<main class="sheet">
+<article>
+  <p class="eyebrow"><a class="back" href="/nabemall/tools/">&larr; All tools</a></p>
+  <h1 class="sheet-title">What will this episode cost in credits?</h1>
+  <p class="lede">Enter the shape of the episode. The rates are what our own account was billed across six months of production, not a vendor price page.</p>
+  
+  <form class="calc" id="calc">
+    <div class="calc-grid">
+      <label>Cuts in the episode
+        <input type="number" id="cuts" value="12" min="1" max="400"></label>
+      <label>Seconds per cut
+        <input type="number" id="secs" value="5" min="1" max="60" step="0.5"></label>
+      <label>Motion tier
+        <select id="tier"><option value="7.5|20.0">Kling 3.0 — Tier 1 — low or no motion</option><option value="17.5|45.0">Seedance 2.0 fast — Tier 2 — some motion</option><option value="40.0|90.0">Seedance 2.0 std — Tier 3 — hard motion</option></select></label>
+      <label>Still model
+        <select id="still"><option value="0.5">GPT Image 2.0 — 0.5 cr/image</option><option value="2.0">Nano Banana Pro — 2.0 cr/image</option></select></label>
+      <label>Stills per cut
+        <input type="number" id="spc" value="1" min="0" max="10" step="1"></label>
+      <label>Your credit price (optional)
+        <input type="number" id="rate" placeholder="e.g. 0.03" min="0" step="0.001"></label>
+    </div>
+    <output class="calc-out" id="out"></output>
+  </form>
+
+  <div class="prose">
+    <h2 class="prose-h">The billing unit is where the money leaks</h2>
+    <p>Kling bills per second. Seedance bills in fixed 5-second and 10-second units. That single
+       difference creates a dead zone: a cut between 4.6s and 8.5s on a
+       Seedance tier is billed as a 10-second order, so roughly half of what you pay for is
+       discarded at the edit. Writing a 5-second cut instead of a 6-second one is free.</p>
+    <h2 class="prose-h">Measured rates</h2>
+    <table class="rate-table">
+      <thead><tr><th>Model</th><th>Tier</th><th>Credits / clip</th><th>Billing</th></tr></thead>
+      <tbody><tr><td>Kling 3.0</td><td>Tier 1 — low or no motion</td><td class='num'>7.5–20</td><td>Bills per second, so a 5s cut costs 5s. No wasted tail.</td></tr><tr><td>Seedance 2.0 fast</td><td>Tier 2 — some motion</td><td class='num'>17.5–45</td><td>Bills in fixed 5s and 10s units. A 6s cut is billed as 10s.</td></tr><tr><td>Seedance 2.0 std</td><td>Tier 3 — hard motion</td><td class='num'>40–90</td><td>Also the only tier that can lip-sync — that is physics, not taste.</td></tr></tbody>
+    </table>
+    <p>Ranges are what our own account was billed, not a vendor price list. They move with duration
+       and resolution, which is why a single &ldquo;cost per clip&rdquo; number is always wrong.</p>
+    <h2 class="prose-h">Why this page will not convert credits to dollars for you</h2>
+    <p>What a credit costs depends on which top-up it came from. Publishing an exchange rate we
+       cannot document would be the one invented number on a site whose whole claim is that its
+       numbers are measured. Enter your own and the tool will use it.</p>
+  </div>
+
+</article>
+</main>
+<script>
+(function () {
+  var f = document.getElementById('calc'), out = document.getElementById('out');
+  if (!f) return;
+  var DEAD_LO = 4.6, DEAD_HI = 8.5;
+  function num(id) { return parseFloat(document.getElementById(id).value) || 0; }
+  function render() {
+    var cuts = num('cuts'), secs = num('secs'), spc = num('spc'), rate = num('rate');
+    var tier = document.getElementById('tier').value.split('|');
+    var lo = parseFloat(tier[0]) * cuts, hi = parseFloat(tier[1]) * cuts;
+    var stills = num('still') * spc * cuts;
+    var tLo = lo + stills, tHi = hi + stills;
+    var money = rate ? ' &middot; <strong>$' + (tLo * rate).toFixed(2) + '–$' + (tHi * rate).toFixed(2) + '</strong>' : '';
+    var seedance = document.getElementById('tier').selectedIndex > 0;
+    var warn = '';
+    if (seedance && secs > DEAD_LO && secs < DEAD_HI) {
+      var wasted = Math.round((10 - secs) / 10 * 100);
+      warn = '<p class="calc-warn">A ' + secs + 's cut on a Seedance tier is billed as a 10s order. ' +
+             'You are paying for ' + wasted + '% you will throw away. Cut to 5s, or extend past ' +
+             DEAD_HI + 's so the 10s unit earns its keep.</p>';
+    }
+    out.innerHTML =
+      '<p class="calc-figure">' + Math.round(tLo) + '–' + Math.round(tHi) + ' credits' + money + '</p>' +
+      '<p class="calc-break">video ' + Math.round(lo) + '–' + Math.round(hi) +
+      ' &middot; stills ' + Math.round(stills) + ' (' + (spc * cuts) + ' images)</p>' + warn;
+  }
+  f.addEventListener('input', render);
+  render();
+})();
+</script>
+<footer class="colophon">
+  <div class="colophon-grid">
+    <div>
+      <p class="colophon-mark">nabemall</p>
+      <p class="colophon-line">AI video production standards, measured on a live account.</p>
+    </div>
+    <div>
+      <p class="colophon-label">Packs</p>
+      <a href="/nabemall/p/ai-video-prompt-craft/">AI Video Prompt Craft</a>
+      <a href="/nabemall/p/animal-bond-shorts/">Animal Bond Shorts</a>
+      <a href="/nabemall/p/ai-video-credit-leaks/">Free extract</a>
+    </div>
+    <div>
+      <p class="colophon-label">Elsewhere</p>
+      <a href="https://kanno5.gumroad.com" rel="noopener">Gumroad store</a>
+      <a href="https://x.com/nabeaimusic" rel="noopener">X / @nabeaimusic</a>
+    </div>
+  </div>
+  <p class="colophon-fine">Checkout, payment, VAT and delivery are handled by Gumroad,
+     the merchant of record. Digital products, delivered as files. No outcome is guaranteed.</p>
+</footer>
+</body>
+</html>

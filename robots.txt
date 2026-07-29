@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kanno321-create.github.io/nabemall/sitemap.xml

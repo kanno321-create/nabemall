@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which i2v model should this shot use? — Kling 3.0 vs Seedance 2.0</title>
+<meta name="description" content="Free router for AI video shots: Kling 3.0 vs Seedance 2.0 fast vs std, by motion difficulty and output format, including the lip-sync override and the 1080p promotion.">
+<link rel="canonical" href="https://kanno321-create.github.io/nabemall/tools/i2v-model-router/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="nabemall">
+<meta property="og:title" content="Which i2v model should this shot use? — Kling 3.0 vs Seedance 2.0">
+<meta property="og:description" content="Free router for AI video shots: Kling 3.0 vs Seedance 2.0 fast vs std, by motion difficulty and output format, including the lip-sync override and the 1080p promotion.">
+<meta property="og:url" content="https://kanno321-create.github.io/nabemall/tools/i2v-model-router/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@nabeaimusic">
+<meta name="twitter:title" content="Which i2v model should this shot use? — Kling 3.0 vs Seedance 2.0">
+<meta name="twitter:description" content="Free router for AI video shots: Kling 3.0 vs Seedance 2.0 fast vs std, by motion difficulty and output format, including the lip-sync override and the 1080p promotion.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%230B1013%22/%3E%3Cg%20stroke%3D%22%23D9A441%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M9%2011h14M9%2016h14M9%2021h8%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/nabemall/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Which i2v model should this shot use? — Kling 3.0 vs Seedance 2.0", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any", "url": "https://kanno321-create.github.io/nabemall/tools/i2v-model-router/", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+</head>
+<body>
+<header class="masthead">
+  <a class="brand" href="/nabemall/">nabemall</a>
+  <nav class="masthead-nav">
+    <a href="/nabemall/#products">Packs</a>
+    <a href="/nabemall/tools/">Tools</a>
+    <a href="/nabemall/work/">Work</a>
+    <a href="/nabemall/#method">Method</a>
+  </nav>
+</header>
+
+<main class="sheet">
+<article>
+  <p class="eyebrow"><a class="back" href="/nabemall/tools/">&larr; All tools</a></p>
+  <h1 class="sheet-title">Which model does this shot belong on?</h1>
+  <p class="lede">Tick what the shot actually does. The answer is the routing rule we run on every channel, including the two exceptions that cost us the most to find.</p>
+  
+  <form class="calc" id="router">
+    <p class="calc-q">Describe the shot. Tick everything that is true of it.</p>
+    <div class="calc-checks">
+      <label><input type="checkbox" data-w="3" id="q-lipsync"> The subject&rsquo;s mouth is synced to audio</label>
+      <label><input type="checkbox" data-w="2"> A body runs, fights, falls or collides</label>
+      <label><input type="checkbox" data-w="2"> Something explodes, collapses or shatters</label>
+      <label><input type="checkbox" data-w="1"> The subject walks or the camera tracks with it</label>
+      <label><input type="checkbox" data-w="1"> The camera zooms or pans across the scene</label>
+      <label><input type="checkbox" data-w="1"> A hand touches or handles an object or animal</label>
+      <label><input type="checkbox" data-w="0"> The subject is still; only air, water, hair or dust moves</label>
+    </div>
+    <p class="calc-q">And the format:</p>
+    <div class="calc-checks">
+      <label><input type="radio" name="fmt" value="shorts" checked> Shorts (9:16, 720p)</label>
+      <label><input type="radio" name="fmt" value="long"> Mid-form or long-form (16:9, 1080p)</label>
+    </div>
+    <output class="calc-out" id="rout"></output>
+  </form>
+
+  <div class="prose">
+    <h2 class="prose-h">The rule this encodes</h2>
+    <table class="rate-table">
+      <thead><tr><th>Motion</th><th>Model</th><th>What belongs here</th></tr></thead>
+      <tbody><tr><td>Tier 1 — low or no motion</td><td><strong>Kling 3.0</strong></td><td>Calm, observational, aftermath, a still subject, a soft drift.</td></tr><tr><td>Tier 2 — some motion</td><td><strong>Seedance 2.0 fast</strong></td><td>Walking, tracking, a zoom, a pan.</td></tr><tr><td>Tier 3 — hard motion</td><td><strong>Seedance 2.0 std</strong></td><td>Fighting, sprinting, a chase, an explosion, a collapse.</td></tr></tbody>
+    </table>
+    <h2 class="prose-h">It is a cost rule, not a taste rule</h2>
+    <p>Running a static shot on the expensive tier is pure waste — the output is not better,
+       it is only dearer. Running a hard-motion shot on the cheap tier is worse than waste,
+       because the re-order costs more than the correct order would have. Most episodes should
+       come out majority Tier 1. If yours does not, the shot list is the thing to look at.</p>
+    <h2 class="prose-h">The two exceptions worth knowing</h2>
+    <p><strong>Lip-sync overrides everything.</strong> A singing or speaking face is nearly still,
+       so every motion heuristic files it as Tier 1 — and then the mouth does not move. This is not
+       a tuning problem: the cheap tier has no audio input at all. Declare lip-sync in the script so
+       the router cannot mis-file it.</p>
+    <p><strong>Resolution is set by format, not by model.</strong> Shorts are 720p, mid and long-form
+       are 1080p. Fast mode cannot render 1080p, so a Tier 2 shot inside a long-form episode is
+       promoted to the standard model to hold the resolution rule. In shorts there is no promotion.</p>
+  </div>
+
+</article>
+</main>
+<script>
+(function () {
+  var f = document.getElementById('router'), out = document.getElementById('rout');
+  if (!f) return;
+  function render() {
+    var boxes = f.querySelectorAll('input[type=checkbox]');
+    var score = 0, lip = document.getElementById('q-lipsync').checked;
+    boxes.forEach(function (b) { if (b.checked) score = Math.max(score, parseInt(b.dataset.w, 10)); });
+    var longform = f.querySelector('input[name=fmt]:checked').value === 'long';
+    var model, why, res = longform ? '1080p' : '720p';
+    if (lip) {
+      model = 'Seedance 2.0 std';
+      res = '1080p';
+      why = 'Lip-sync is a hard override. The cheaper tiers have no audio input, so the mouth ' +
+            'will not track no matter how the prompt is written. Even in a shorts episode this ' +
+            'one cut goes to 1080p — a mouth that mushes at 720p cannot be recovered.';
+    } else if (score >= 2) {
+      model = 'Seedance 2.0 std';
+      why = 'Hard motion. This is the tier where a failed order costs more than the expensive ' +
+            'order would have, so it is the wrong place to economise.';
+    } else if (score === 1) {
+      model = longform ? 'Seedance 2.0 std (promoted)' : 'Seedance 2.0 fast';
+      why = longform
+        ? 'Moderate motion, but fast mode cannot render 1080p and long-form is a 1080p format, ' +
+          'so this shot is promoted to hold the resolution rule.'
+        : 'Moderate motion, and shorts are 720p — which is exactly fast mode\u2019s ceiling. ' +
+          'Fast costs you nothing in quality here.';
+    } else {
+      model = 'Kling 3.0';
+      why = 'Little or no motion. This should be the majority of your shot list. It also bills ' +
+            'per second rather than in 5s and 10s blocks, so short cuts stay cheap.';
+    }
+    out.innerHTML = '<p class="calc-figure">' + model + ' &middot; ' + res + '</p>' +
+                    '<p class="calc-break">' + why + '</p>';
+  }
+  f.addEventListener('change', render);
+  render();
+})();
+</script>
+<footer class="colophon">
+  <div class="colophon-grid">
+    <div>
+      <p class="colophon-mark">nabemall</p>
+      <p class="colophon-line">AI video production standards, measured on a live account.</p>
+    </div>
+    <div>
+      <p class="colophon-label">Packs</p>
+      <a href="/nabemall/p/ai-video-prompt-craft/">AI Video Prompt Craft</a>
+      <a href="/nabemall/p/animal-bond-shorts/">Animal Bond Shorts</a>
+      <a href="/nabemall/p/ai-video-credit-leaks/">Free extract</a>
+    </div>
+    <div>
+      <p class="colophon-label">Elsewhere</p>
+      <a href="https://kanno5.gumroad.com" rel="noopener">Gumroad store</a>
+      <a href="https://x.com/nabeaimusic" rel="noopener">X / @nabeaimusic</a>
+    </div>
+  </div>
+  <p class="colophon-fine">Checkout, payment, VAT and delivery are handled by Gumroad,
+     the merchant of record. Digital products, delivered as files. No outcome is guaranteed.</p>
+</footer>
+</body>
+</html>
