@@ -38,9 +38,9 @@
   <p class="lede">One published episode, opened up: the finished film, every generated clip, the source stills, and the exact prompt behind each cut.</p>
 </section>
 <section class="packs">
-  <div class="chips" role="group" aria-label="Filter by genre"><button class="chip is-on" data-filter="all" type="button">All <span>8</span></button><button class="chip" data-filter="True crime" type="button">True crime <span>4</span></button><button class="chip" data-filter="Wildlife" type="button">Wildlife <span>3</span></button><button class="chip" data-filter="Space" type="button">Space <span>1</span></button></div>
+  
   <div class="pack-grid">
-<article class="pack" data-genre="Wildlife">
+<article class="pack">
   <a class="pack-frame" href="/nabemall/p/teardown-jaguar-water-ghost-youth/"><img src="https://public-files.gumroad.com/8ihcaame01qdldvb6zrt2999vamc" alt="" loading="lazy" width="670" height="376"></a>
   <div class="pack-body">
     <p class="pack-meta">Documentary</p>
@@ -52,7 +52,7 @@
     </p>
   </div>
 </article>
-<article class="pack" data-genre="True crime">
+<article class="pack">
   <a class="pack-frame" href="/nabemall/p/teardown-balloon-boy/"><img src="https://public-files.gumroad.com/fjftjnh39otccw7fwk2mig958vrd" alt="" loading="lazy" width="670" height="376"></a>
   <div class="pack-body">
     <p class="pack-meta">Documentary</p>
@@ -64,7 +64,7 @@
     </p>
   </div>
 </article>
-<article class="pack" data-genre="True crime">
+<article class="pack">
   <a class="pack-frame" href="/nabemall/p/teardown-anna-delvey-free/"><img src="https://public-files.gumroad.com/s4gt7hwvqtrf8adnkmioqc0m1pqf" alt="" loading="lazy" width="670" height="376"></a>
   <div class="pack-body">
     <p class="pack-meta">Documentary</p>
@@ -76,7 +76,7 @@
     </p>
   </div>
 </article>
-<article class="pack" data-genre="Wildlife">
+<article class="pack">
   <a class="pack-frame" href="/nabemall/p/teardown-leopard-dubgrandpa/"><img src="https://public-files.gumroad.com/29m0b7phsen4l7hsac4hl9t0gk6y" alt="" loading="lazy" width="670" height="376"></a>
   <div class="pack-body">
     <p class="pack-meta">Documentary</p>
@@ -88,7 +88,7 @@
     </p>
   </div>
 </article>
-<article class="pack" data-genre="True crime">
+<article class="pack">
   <a class="pack-frame" href="/nabemall/p/teardown-katherine-knight/"><img src="https://public-files.gumroad.com/ml25qbemruioywwy0sgc47iw97wu" alt="" loading="lazy" width="670" height="376"></a>
   <div class="pack-body">
     <p class="pack-meta">Documentary</p>
@@ -100,7 +100,7 @@
     </p>
   </div>
 </article>
-<article class="pack" data-genre="True crime">
+<article class="pack">
   <a class="pack-frame" href="/nabemall/p/teardown-barefoot-bandit/"><img src="https://public-files.gumroad.com/08ug3kb2zfzu0sx6fu01wujzdpap" alt="" loading="lazy" width="670" height="376"></a>
   <div class="pack-body">
     <p class="pack-meta">Documentary</p>
@@ -112,7 +112,7 @@
     </p>
   </div>
 </article>
-<article class="pack" data-genre="Space">
+<article class="pack">
   <a class="pack-frame" href="/nabemall/p/teardown-night-sky/"><img src="https://public-files.gumroad.com/qh8uccgjpwknbexsok2edeqpuudy" alt="" loading="lazy" width="670" height="376"></a>
   <div class="pack-body">
     <p class="pack-meta">Documentary</p>
@@ -124,7 +124,7 @@
     </p>
   </div>
 </article>
-<article class="pack" data-genre="Wildlife">
+<article class="pack">
   <a class="pack-frame" href="/nabemall/p/teardown-hippo-river/"><img src="https://public-files.gumroad.com/o6w70beprsewauwockpin3kwrlzr" alt="" loading="lazy" width="670" height="376"></a>
   <div class="pack-body">
     <p class="pack-meta">Documentary</p>
@@ -138,18 +138,6 @@
 </article></div>
 </section>
 </main>
-<script>
-var chips = document.querySelectorAll('.chip');
-chips.forEach(function (chip) {
-  chip.addEventListener('click', function () {
-    var want = chip.dataset.filter;
-    chips.forEach(function (c) { c.classList.toggle('is-on', c === chip); });
-    document.querySelectorAll('.pack-grid .pack').forEach(function (p) {
-      p.hidden = want !== 'all' && p.dataset.genre !== want;
-    });
-  });
-});
-</script>
 <footer class="colophon">
   <div class="colophon-grid">
     <div>

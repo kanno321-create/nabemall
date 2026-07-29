@@ -1160,3 +1160,80 @@ iframe.tile-frame { border: 1px solid var(--rule); }
   .aisle-head { flex-direction: column; gap: 0.8rem; }
   .aisle-count { font-size: 1.6rem; }
 }
+
+/* Kind board — the front page
+   ---------------------------------------------------------------------------
+   Five tiles answering "what kinds of thing are on sale", replacing the grid
+   that printed every product. A thumbnail cannot tell a $19 episode teardown
+   from a $49 corpus, so the tile carries the count and the price range and the
+   grid stays a fixed height however large the catalogue grows.
+   --------------------------------------------------------------------------- */
+.kind-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.kind {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1.5rem 1.4rem 1.3rem;
+  background: var(--slate-raised);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s ease;
+}
+.kind:hover { background: #142126; }
+.kind-head {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 0.8rem; margin: 0;
+}
+.kind-head strong { font-family: var(--display); font-size: 1.24rem; font-weight: 600; }
+.kind-n {
+  font-family: var(--mono); font-size: 0.82rem; color: var(--spend);
+  border: 1px solid var(--rule); border-radius: 999px; padding: 0.1rem 0.6rem;
+}
+.kind-blurb {
+  margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.55; flex: 1;
+}
+.kind-foot {
+  display: flex; align-items: baseline; gap: 0.7rem; margin: 0;
+  padding-top: 0.75rem; border-top: 1px solid var(--rule-soft);
+}
+.kind-price { font-family: var(--mono); font-size: 0.95rem; color: var(--saved); }
+.kind-lead {
+  color: var(--faint); font-size: 0.8rem;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* Shelf board — inside an oversized aisle
+   Eighty-four teardowns are not a category, they are the scroll the categories
+   were meant to end. Past SHELF_MAX the aisle leads with these, and each one
+   is a real page: linkable, indexable, landable. */
+.shelf-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(178px, 1fr));
+  gap: 0.7rem;
+  margin-bottom: 2rem;
+}
+.shelf {
+  display: flex; flex-direction: column; gap: 0.3rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--rule); border-radius: 8px;
+  background: var(--slate-raised); text-decoration: none; color: inherit;
+  transition: border-color 0.15s ease;
+}
+.shelf:hover { border-color: var(--faint); }
+.shelf strong { font-size: 1rem; font-weight: 600; }
+.shelf-n { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); }
+.shelf-p { font-family: var(--mono); font-size: 0.85rem; color: var(--spend); }
+.shelf-note { color: var(--muted); font-size: 0.9rem; margin: 0 0 1.1rem; }
+
+@media (max-width: 700px) {
+  .kind { padding: 1.2rem 1.1rem; }
+  .shelf-board { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+}
