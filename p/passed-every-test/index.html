@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Passed Every Test — 22 defects that survived a green test suite — nabemall</title>
+<meta name="description" content="Twenty-two confirmed defects from building and shipping one working system, grouped by the eight ways a check can run, report success and prove nothing. Symptom, cause and fix for each — two of them still only partly fixed.">
+<link rel="canonical" href="https://kanno321-create.github.io/nabemall/p/passed-every-test/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="nabemall">
+<meta property="og:title" content="Passed Every Test — 22 defects that survived a green test suite — nabemall">
+<meta property="og:description" content="Twenty-two confirmed defects from building and shipping one working system, grouped by the eight ways a check can run, report success and prove nothing. Symptom, cause and fix for each — two of them still only partly fixed.">
+<meta property="og:url" content="https://kanno321-create.github.io/nabemall/p/passed-every-test/">
+<meta property="og:image" content="https://public-files.gumroad.com/j7fqsvtvuh89zahk707mfr44pdvr"><meta name="twitter:image" content="https://public-files.gumroad.com/j7fqsvtvuh89zahk707mfr44pdvr"><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@nabeaimusic">
+<meta name="twitter:title" content="Passed Every Test — 22 defects that survived a green test suite — nabemall">
+<meta name="twitter:description" content="Twenty-two confirmed defects from building and shipping one working system, grouped by the eight ways a check can run, report success and prove nothing. Symptom, cause and fix for each — two of them still only partly fixed.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%227%22%20fill%3D%22%230B1013%22/%3E%3Cg%20stroke%3D%22%23D9A441%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M9%2011h14M9%2016h14M9%2021h8%22/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/nabemall/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Passed Every Test — 22 defects that survived a green test suite", "description": "Twenty-two confirmed defects from building and shipping one working system, grouped by the eight ways a check can run, report success and prove nothing. Symptom, cause and fix for each — two of them still only partly fixed.", "image": "https://public-files.gumroad.com/j7fqsvtvuh89zahk707mfr44pdvr", "brand": {"@type": "Brand", "name": "nabemall"}, "offers": {"@type": "Offer", "price": "29.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock", "url": "https://kanno321-create.github.io/nabemall/p/passed-every-test/"}}</script>
+</head>
+<body>
+<header class="masthead">
+  <a class="brand" href="/nabemall/">nabemall</a>
+  <nav class="masthead-nav">
+    <a href="/nabemall/shop/">Shop</a>
+    <a href="/nabemall/tools/">Tools</a>
+    <a href="/nabemall/work/">Work</a>
+    <a href="/nabemall/#method">Method</a>
+  </nav>
+</header>
+
+<main class="sheet">
+<article>
+  <p class="eyebrow"><a class="back" href="/nabemall/#products">&larr; All packs</a></p>
+  <h1 class="sheet-title">Passed Every Test — 22 defects that survived a green test suite</h1>
+  <p class="lede">Twenty-two confirmed defects from building and shipping one working system, grouped by the eight ways a check can run, report success and prove nothing. Symptom, cause and fix for each — two of them still only partly fixed.</p>
+
+  <div class="offer">
+    <span class="amount ">$29</span>
+    <a class="btn btn-solid" href="https://kanno5.gumroad.com/l/passed-every-test?wanted=true&amp;utm_source=nabemall&amp;utm_medium=site&amp;utm_campaign=passed-every-test">Buy for $29</a>
+    <span class="offer-note">Instant download &middot; secure checkout on Gumroad</span>
+  </div>
+
+  <figure class="plate"><img src="https://public-files.gumroad.com/j7fqsvtvuh89zahk707mfr44pdvr" alt="Passed Every Test — 22 defects that survived a green test suite cover"></figure>
+
+  <div class="prose"><p>Twenty-two defects. Every one of them survived a check that should have caught it.</p><p>The bugs are ordinary — a missing migration, a shadowed variable, an empty column. The interesting part is the second column: for each one, the specific mechanism by which a test ran, reported success, and proved nothing. That list is short, it repeats, and it is the part that transfers to a codebase in another language doing another job.</p><h2 class="prose-h">The eight ways a check lies</h2><ul class="prose-list"><li>The check could not fail — an assertion that passes for a reason unrelated to correctness. Worse than no check, because it reports a colour.</li><li>The environment was too clean — the test builds its world from the current definitions, so a mismatch between definitions and the world that already exists cannot occur there.</li><li>The API returns a value instead of failing — a missing key gives you a blank, an unknown CSS class styles nothing, an append is not a replace. Nothing raises, so nothing is logged.</li><li>The fix never reached the artefact — the source says one thing and the file on disk says another.</li><li>Only the successes were counted — a report of what worked is not a report.</li><li>The comment contradicted the code — a confident wrong sentence stops the next reader from checking.</li><li>Two concepts shared one column — a disclosure that confidently answers the question next to the one being asked.</li><li>A substring was treated as an identity — a cleanup matching on a name, deleting something real.</li></ul><h2 class="prose-h">What is in it</h2><ul class="prose-list"><li>README.md — the taxonomy, an eight-question checklist to run against your own suite, and all twenty-two entries with symptom, confirmed cause and applied fix</li><li>defects.csv — the register as data, so you can sort it by blind spot or by area</li><li>blindspots.json — the counts, and which fixes are still partial</li></ul><h2 class="prose-h">Entries look like this</h2><p>A fresh install died at import while the development machine stayed fine indefinitely — because create_all skips tables that already exist and therefore never resolves their foreign keys. A suite reported 15/15 while three of its most important assertions never executed, guarded behind an if that an empty result set made false. A cleanup query written to delete test fixtures matched a finished production item, because the filter was a substring and a real title contained the word &quot;fastest&quot;.</p><h2 class="prose-h">No clean endings</h2><p>Two of the twenty-two carry fixes marked partial, in place, because the underlying blind spot is still open and the next occurrence will also be silent. A register of tidy resolutions would be a marketing document.</p><h2 class="prose-h">What this is not</h2><p>Not a survey, not a study, not best practice. Twenty-two defects from one system built by one operator over one stretch of work. The sample is small and it is not random — it is what happened. No percentage here is a base rate. What is offered is the taxonomy and the checklist, both of which cost real time to learn.</p><h2 class="prose-h">Who this is for</h2><p>Anyone whose test suite is green and who has started to wonder what that actually proves. The examples are Python, SQLite and a web app; the eight blind spots are not.</p><p>English. Markdown, CSV and JSON — no software to install.</p></div>
+
+  <ul class="tags"><li>testing</li><li>software quality</li><li>debugging</li><li>python</li><li>engineering</li></ul>
+
+  <div class="offer offer-end">
+    <span class="amount ">$29</span>
+    <a class="btn btn-solid" href="https://kanno5.gumroad.com/l/passed-every-test?wanted=true&amp;utm_source=nabemall&amp;utm_medium=site&amp;utm_campaign=passed-every-test-end">Buy for $29</a>
+  </div>
+</article>
+</main>
+<footer class="colophon">
+  <div class="colophon-grid">
+    <div>
+      <p class="colophon-mark">nabemall</p>
+      <p class="colophon-line">AI video production standards, measured on a live account.</p>
+    </div>
+    <div>
+      <p class="colophon-label">Packs</p>
+      <a href="/nabemall/p/ai-video-prompt-craft/">AI Video Prompt Craft</a>
+      <a href="/nabemall/p/animal-bond-shorts/">Animal Bond Shorts</a>
+      <a href="/nabemall/p/ai-video-credit-leaks/">Free extract</a>
+    </div>
+    <div>
+      <p class="colophon-label">Elsewhere</p>
+      <a href="https://kanno5.gumroad.com" rel="noopener">Gumroad store</a>
+      <a href="https://x.com/nabeaimusic" rel="noopener">X / @nabeaimusic</a>
+    </div>
+  </div>
+  <p class="colophon-fine">Checkout, payment, VAT and delivery are handled by Gumroad,
+     the merchant of record. Digital products, delivered as files. No outcome is guaranteed.</p>
+</footer>
+</body>
+</html>
